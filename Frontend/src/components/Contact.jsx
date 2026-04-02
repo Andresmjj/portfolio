@@ -5,7 +5,7 @@ export default function Contact() {
                 <header>
                     <h2 className="text-2xl font-semibold tracking-[-0.04em] text-white">Contáctame</h2>
                     <p className="mt-2 text-sm leading-7 text-slate-200/76">
-                        ¿Interesado en colaborar? Estoy disponible para proyectos desafiantes y oportunidades de crecimiento.
+                        Estoy abierto a nuevas oportunidades y colaboraciones, No dudes en contactarme a través de cualquiera de los siguientes medios. ¡Espero con interés conectarme contigo!
                     </p>
                 </header>
 

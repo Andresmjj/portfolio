@@ -14,7 +14,7 @@ export default function Hero() {
               Andres Maldonado Jimenez
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-8 text-slate-200/78 sm:text-lg">
-              Soy un desarrollador full stack con experiencia en la creación de aplicaciones web modernas, con tecnologías
+              Soy un desarrollador full stack junior, con experiencia en la creación de aplicaciones web modernas, con tecnologías
               como React, NestJS, Java y SQL. Me apasiona construir soluciones técnicas que sean eficientes, escalables y
               fáciles de mantener.
             </p>
