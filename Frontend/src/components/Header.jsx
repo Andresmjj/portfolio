@@ -3,7 +3,7 @@ export default function Header() {
         <header className="fixed inset-x-0 top-4 z-50 px-4 sm:px-6 lg:px-8">
             <div className="mx-auto flex max-w-[min(80vw,72rem)] items-center justify-between rounded-full border border-white/10 bg-slate-950/55 px-4 py-3 shadow-[0_20px_60px_rgba(0,0,0,0.25)] backdrop-blur-2xl">
 
-                <img src="/public/Favicon-mj.svg" alt="Andres Maldonado" className="h-10 w-10 rounded-full object-cover bg-white" />
+                <img src="/Favicon-mj.svg" alt="Andres Maldonado logo" className="h-10 w-10 rounded-full object-cover bg-white" />
 
                 <nav>
                     <ul className="flex items-center gap-2">
