@@ -1,26 +1,28 @@
 export default function Header() {
     return (
-        <header className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between border-b border-white/5 bg-slate-950/30 px-4 py-4 backdrop-blur-md sm:px-6 lg:px-8">
-            <div className="flex items-center">
+        <header className="fixed inset-x-0 top-4 z-50 px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto flex max-w-[min(80vw,72rem)] items-center justify-between rounded-full border border-white/10 bg-slate-950/55 px-4 py-3 shadow-[0_20px_60px_rgba(0,0,0,0.25)] backdrop-blur-2xl">
+
+                <img src="/public/Favicon-mj.svg" alt="Andres Maldonado" className="h-10 w-10 rounded-full object-cover bg-white" />
+
                 <nav>
-                    <ul className="flex gap-1 sm:gap-2">
+                    <ul className="flex items-center gap-2">
                         <li>
-                            <a href="#inicio" className="text-xs sm:text-sm font-medium text-slate-200 transition hover:text-white">
-                                Inicio
-                            </a>
+                            <a className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-100 transition hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10" href="#inicio">
+                                Inicio</a>
                         </li>
                         <li>
-                            <a href="#proyectos" className="text-xs sm:text-sm font-medium text-slate-200 transition hover:text-white">
-                                Proyectos
-                            </a>
+                            <a className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-100 transition hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10" href="#proyectos">
+                                Proyectos</a>
                         </li>
                         <li>
-                            <a href="#contacto" className="text-xs sm:text-sm font-medium text-slate-200 transition hover:text-white">
-                                Contacto
-                            </a>
+                            <a className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-100 transition hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10" href="#contacto">
+                                Contacto</a>
                         </li>
                     </ul>
                 </nav>
+
+
             </div>
         </header>
     )
