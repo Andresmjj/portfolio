@@ -1,11 +1,11 @@
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Education from './components/Education'
-import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import BackgroundAnimation from './components/BackgroundAnimation'
 import Skills from './components/Skills'
+import Experience from './components/experience'
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
               </div>
 
               <div className="lg:col-span-8 mt-5">
-                <Projects />
+                <Experience />
               </div>
             </div>
 
