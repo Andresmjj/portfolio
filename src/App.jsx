@@ -5,7 +5,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import BackgroundAnimation from './components/BackgroundAnimation'
 import Skills from './components/Skills'
-import Experience from './components/experience'
+import Experience from './components/Experience.jsx'
 
 function App() {
   return (
