@@ -1,4 +1,4 @@
-const skills = ['Docker', 'NestJS', 'JAVA', 'SQL', 'React']
+import mainSkills from '../data/mainSkills.json'
 
 export default function Hero() {
   return (
@@ -25,12 +25,12 @@ export default function Hero() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              {skills.map((skill) => (
+              {mainSkills.map((skill) => (
                 <span
-                  key={skill}
+                  key={skill.name}
                   className="rounded-full border border-white/12 bg-white/6 px-4 py-2 text-sm font-medium tracking-wide text-slate-100/92 backdrop-blur-xl transition duration-200 hover:-translate-y-0.5 hover:bg-white/10"
                 >
-                  {skill}
+                  {skill.name}
                 </span>
               ))}
             </div>

@@ -1,0 +1,29 @@
+[
+    {
+        "tile" : "DoClio",
+        "description" : "Aplicativo web para el sector salud, con el objetivo de facilitar el acceso a servicios médicos y exámenes especializados, mejorando la experiencia del paciente y optimizando en la gestión de citas médicas.",
+        "tecnologias" : [
+            {
+                "title" : "NestJS",
+                "img" : "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg"
+            },
+            {
+                "title" : "Node.js",
+                "img" : "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+            },
+            {
+                "title" : "React",
+                "img" : "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+            },
+            {
+                "title" : "PostgreSQL",
+                "img" : "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+            },
+            {
+                "title" : "Docker",
+                "img" : "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+            }
+        ]
+    }
+
+]

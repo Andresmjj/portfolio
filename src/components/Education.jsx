@@ -1,13 +1,6 @@
-const studies = [
-  {
-    title: 'Tecnólogo en análisis y desarrollo de sistemas',
-    detail: 'Formación enfocada en construcción de software, creación de bases de datos y desarrollo de aplicaciones web.',
-  },
-  {
-    title: 'Técnico en sistemas',
-    detail: 'Base técnica en informática, con conocimiento en hardware, software, soporte técnico y redes.',
-  },
-]
+import studies from '../data/studies.json'
+
+
 
 export default function Education() {
   return (
@@ -20,7 +13,8 @@ export default function Education() {
           {studies.map((study) => (
             <div key={study.title} className="border-b border-white/8 pb-3 last:border-b-0 last:pb-0">
               <h3 className="text-base font-medium text-white">{study.title}</h3>
-              <p className="mt-1 text-sm leading-5.5 text-slate-200/76">{study.detail}</p>
+              <p className="mt-1 text-sm leading-5.5 text-slate-200/76">{study.institucion}</p>
+              <p className="mt-1 text-sm leading-5.5 text-slate-200/76">{study.Periodo}</p>
             </div>
           ))}
         </div>

@@ -1,0 +1,27 @@
+[
+    {
+        "name" : "Java",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+    },
+    {
+        "name" : "Spring Boot",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+    },
+    {
+        "name" : "Node.js",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+    },
+    {
+        "name" : "NestJS",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg"
+    },
+    {
+        "name" : "React",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+    },
+
+    {
+        "name" : "SQL",
+        "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+    }
+]
