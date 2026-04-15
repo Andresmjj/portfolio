@@ -19,7 +19,7 @@ export default function Contact() {
                     </a>
 
                     <a
-                        href="https://www.linkedin.com/in/andr%C3%A9s-maldonado-40885a30b/"
+                        href="https://www.linkedin.com/in/andresmaldonadoj/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group rounded-2xl border border-white/8 bg-white/5 p-5 transition hover:border-white/15 hover:bg-white/8"
