@@ -1,7 +1,5 @@
 import studies from '../data/studies.json'
 
-
-
 export default function Education() {
   return (
     <section className="py-0">
