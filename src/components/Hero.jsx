@@ -10,7 +10,7 @@ export default function Hero() {
               !Bienvenido, es un placer tener Aqui!</p>
 
             <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-[-0.07em] text-white sm:text-5xl lg:text-6xl">
-              Soy Andrés Maldonado Jiménez
+              Andrés Maldonado Jiménez
             </h1>
 
             <h2 className="mt-3 text-xl font-medium text-slate-200/90 sm:text-2xl">
@@ -31,11 +31,10 @@ export default function Hero() {
             </figure>
 
             <p className="mt-5 max-w-2xl text-base leading-8 text-slate-200/78 sm:text-lg">
-              Desarrollador de software enfocado en la construcción de aplicaciones web modernas y escalables, con experiencia principalmente en backend utilizando tecnologías como Node.js, Java y C#. Complemento mi perfil con conocimientos en frontend con React y Angular, además de fundamentos en DevOps y despliegue de aplicaciones con Docker.
-            </p>
-
-            <p className="mt-3 max-w-2xl text-base leading-6 text-slate-200/78">
-              Me apasiona el desarrollo de software y la creación de soluciones que aporten valor a problemas reales. Disfruto aprender constantemente, enfrentar nuevos retos y mejorar tanto a nivel técnico como profesional.
+              Desarrollador Full Stack con enfoque principal en Backend, con más de 1 año de experiencia diseñando e implementando aplicaciones
+              webescalables. Dominio en el ciclo de vida completo del software utilizando Node.js (NestJS), Java (Spring Boot), Python (FastAPI),
+              React y bases de datos PostgreSQL / MongoDB. Experiencia en arquitectura de microservicios, containerización con Docker,
+              optimización de rendimiento (SEO técnico) e integración de herramientas de IA para agilizar flujos de desarrollo.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">

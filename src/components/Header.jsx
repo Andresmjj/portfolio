@@ -5,6 +5,7 @@ export default function Header() {
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
+
     };
 
     const closeMenu = () => {
@@ -13,7 +14,7 @@ export default function Header() {
 
     return (
         <header className="fixed inset-x-0 top-4 z-50 px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto flex max-w-[min(90vw,72rem)] md:max-w-[min(80vw,72rem)] items-center justify-between rounded-full border border-white/10 bg-slate-950/55 px-3 py-3 sm:px-4 shadow-[0_20px_60px_rgba(0,0,0,0.25)] backdrop-blur-2xl">
+            <div className="mx-auto flex max-w-[min(90vw,72rem)] items-center justify-between rounded-full border border-white/10 bg-slate-950/55 px-3 py-3 sm:px-4 shadow-[0_20px_60px_rgba(0,0,0,0.25)] backdrop-blur-2xl">
 
                 {/* Logo */}
                 <a href="#inicio" onClick={closeMenu}>
@@ -21,7 +22,7 @@ export default function Header() {
                 </a>
 
                 {/* Desktop Navigation */}
-                <nav className="hidden md:block">
+                <nav className="hidden md:block ">
                     <ul className="flex items-center gap-2">
                         <li>
                             <a className="rounded-full border border-white/10 bg-white/5 px-3 sm:px-4 py-2 text-xs sm:text-sm text-slate-100 transition hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10" href="#inicio">
