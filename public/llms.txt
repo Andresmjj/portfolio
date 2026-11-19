@@ -1,0 +1,32 @@
+# Andrés Maldonado Jiménez
+
+> Desarrollador Full Stack con acento en backend, radicado en Medellín, Colombia. Construye producto en producción: datos íntegros y trazables, de la API a la interfaz.
+
+- Web: https://andresmaldonado.vercel.app/
+- Hoja de vida (PDF, una página): https://andresmaldonado.vercel.app/Andres-Maldonado-CV.pdf
+- Correo: andresmaldonado1022@gmail.com
+- WhatsApp: +57 312 655 8732
+- LinkedIn: https://www.linkedin.com/in/andresmaldonadoj/
+- GitHub: https://github.com/Andresmjj
+- Ubicación: Medellín, Antioquia, Colombia
+- Modalidad: presencial, híbrida o remota
+- Idiomas: español nativo, inglés B1
+
+## Trayectoria verificable
+
+- DoClio (marketplace de servicios de salud): empleado de planta de junio de 2025 a junio de 2026; contratista independiente desde julio de 2026.
+- Cifras: 124 endpoints REST, 16 dominios de negocio, 24 modelos en PostgreSQL con Prisma, 9 enums, 23 migraciones versionadas, 30 cambios de esquema, 70 páginas y 57 rutas en React, chat en tiempo real con Socket.io sobre Redis, 11 landings de servicio, despliegue en Linux con Docker Compose y Nginx con TLS.
+- QuerermeKatar: e-commerce personal con microservicios en Node.js/NestJS, React, PostgreSQL y MongoDB, autenticación JWT y Google Login (OAuth2).
+- AI Inventory Assistant: API con Python/FastAPI y Google Gemini mediante Function Calling para operar inventario en lenguaje natural; PostgreSQL, SQLAlchemy, Alembic y Docker.
+
+## Stack
+
+- Domina: Node.js, NestJS, TypeScript, React, PostgreSQL, Prisma, MongoDB, Redis, Socket.io, Docker, Linux, Nginx, Git.
+- En formación: Java con Spring Boot, Angular.
+
+## Formación
+
+- Ingeniería de Software, Politécnico Grancolombiano (en curso).
+- Tecnólogo en Análisis y Desarrollo de Software, SENA (2023–2025).
+- Técnico en Sistemas, SENA (2022–2023).
+- Certificación: Conceptos de Ciberseguridad, SENA.
