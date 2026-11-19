@@ -1,30 +1,32 @@
-import skills from '../data/skills.json'
+import Reveal from './Reveal'
+import { skillGroups } from '../data/profile'
 
 export default function Skills() {
-    return (
-        <section className="py-0">
-            <article className="rounded-3xl border border-white/8 bg-white/5 p-4.5 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-white/15 sm:p-5">
-                <header>
-                    <h2 className="text-xs uppercase tracking-[0.28em] text-slate-300/75">Tecnologias</h2>
-                </header>
+  return (
+    <section aria-labelledby="stack-titulo" className="pb-20 sm:pb-28">
+      <div className="page-shell">
+        <Reveal as="p" className="section-label">
+          Herramientas
+        </Reveal>
+        <Reveal as="h2" id="stack-titulo" delay={60} className="mt-4 max-w-2xl text-3xl font-semibold tracking-[-0.03em] text-ink sm:text-4xl">
+          El stack que sostiene esos proyectos.
+        </Reveal>
 
-                <ul className="mt-3 grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-2">
-                    {skills.map((skill) => (
-                        <li
-                            key={skill.name}
-                            className="group flex items-center gap-2 rounded-xl border border-white/8 bg-white/5 px-2.5 py-2 transition duration-200 hover:border-white/16 hover:bg-white/10"
-                        >
-                            <img
-                                src={skill.img}
-                                alt={skill.name}
-                                loading="lazy"
-                                className="h-5.5 w-5.5 rounded-sm object-contain"
-                            />
-                            <span className="text-xs font-medium text-slate-100/90">{skill.name}</span>
-                        </li>
-                    ))}
-                </ul>
-            </article>
-        </section>
-    )
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {skillGroups.map((group, index) => (
+            <Reveal key={group.title} as="article" delay={index * 60} className="surface-card p-6">
+              <h3 className="text-sm font-semibold text-ink">{group.title}</h3>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <li key={item} className="rounded-full border border-line px-3 py-1.5 text-xs text-muted">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
 }

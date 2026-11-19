@@ -1,45 +1,39 @@
+import ScrollProgress from './components/ScrollProgress'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import Evidence from './components/Evidence'
+import Journey from './components/Journey'
+import Skills from './components/Skills'
 import Education from './components/Education'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import BackgroundAnimation from './components/BackgroundAnimation'
-import Skills from './components/Skills'
-import Experience from './components/Experience.jsx'
+import { useReveal } from './hooks/useReveal'
 
-function App() {
+export default function App() {
+  useReveal()
+
   return (
-    <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100">
-      <BackgroundAnimation />
+    <>
+      <a
+        href="#contenido"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[70] focus:rounded-lg focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-white"
+      >
+        Saltar al contenido
+      </a>
 
-      <div className="relative z-10 flex min-h-screen flex-col">
-        <Header />
+      <ScrollProgress />
+      <Header />
 
-        <main className="flex-1">
-          <div className="mx-auto w-full max-w-[min(80vw,72rem)] px-4 py-6 sm:px-6 lg:px-8">
-            <Hero />
+      <main id="contenido" className="overflow-x-clip">
+        <Hero />
+        <Evidence />
+        <Journey />
+        <Skills />
+        <Education />
+        <Contact />
+      </main>
 
-            <div className="mt-3 grid gap-4 lg:grid-cols-12 lg:items-start">
-              <div className="space-y-4 lg:col-span-4">
-                <Education />
-                <Skills />
-              </div>
-
-              <div className="lg:col-span-8 mt-5">
-                <Experience />
-              </div>
-            </div>
-
-            <Contact />
-          </div>
-        </main>
-
-        <footer className="relative z-10">
-          <Footer />
-        </footer>
-      </div>
-    </div>
+      <Footer />
+    </>
   )
 }
-
-export default App

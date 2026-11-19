@@ -1,44 +1,81 @@
+import Reveal from './Reveal'
+import { faqs, mailtoUrl, profile, whatsappUrl } from '../data/profile'
+
+const channels = [
+  {
+    label: 'Descargar CV',
+    value: 'Una página, la misma historia',
+    href: profile.cv,
+    download: 'Andres-Maldonado-CV.pdf',
+  },
+  {
+    label: 'WhatsApp',
+    value: profile.phone,
+    href: whatsappUrl,
+    external: true,
+  },
+  {
+    label: 'Correo',
+    value: profile.email,
+    href: mailtoUrl,
+  },
+]
+
 export default function Contact() {
-    return (
-        <section id="contacto" className="py-8 sm:py-10 px-4 sm:px-0">
-            <article className="rounded-2xl sm:rounded-3xl border border-white/8 bg-white/5 p-5 sm:p-6 lg:p-7 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-white/15">
-                <header>
-                    <h2 className="text-xl sm:text-2xl font-semibold tracking-[-0.04em] text-white">Contáctame</h2>
-                    <p className="mt-2 text-xs sm:text-sm leading-6 sm:leading-7 text-slate-200/76">
-                        Estoy abierto a nuevas oportunidades y colaboraciones, No dudes en contactarme a través de cualquiera de los siguientes medios. ¡Espero con interés conectarme contigo!
-                    </p>
-                </header>
+  return (
+    <section id="contacto" aria-labelledby="contacto-titulo" className="py-20 sm:py-28">
+      <div className="page-shell">
+        <Reveal className="rounded-xl border border-line bg-surface px-6 py-10 sm:px-10 sm:py-14">
+          <p className="section-label">Contacto</p>
+          <h2 id="contacto-titulo" className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-ink sm:text-4xl">
+            Hablemos de tu producto.
+          </h2>
+          <p className="mt-4 max-w-2xl text-base leading-7 text-muted">
+            Si buscas alguien que cuide el dato y la interfaz, estoy disponible para
+            conversar. Presencial, híbrido o remoto; lo que mejor funcione para el equipo.
+          </p>
 
-                <div className="mt-6 sm:mt-8 grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-                    <a
-                        href="mailto:andresmaldonado1022@gmail.com"
-                        className="group rounded-xl sm:rounded-2xl border border-white/8 bg-white/5 p-4 sm:p-5 transition hover:border-white/15 hover:bg-white/8"
-                    >
-                        <p className="text-xs uppercase tracking-[0.28em] text-slate-300/75">Email</p>
-                        <p className="mt-2 text-sm sm:text-base font-medium text-white group-hover:text-slate-100 break-all">andresmaldonado1022@gmail.com</p>
-                    </a>
+          <div className="mt-10 grid gap-3 sm:grid-cols-3">
+            {channels.map((channel) => (
+              <a
+                key={channel.label}
+                href={channel.href}
+                download={channel.download}
+                target={channel.external ? '_blank' : undefined}
+                rel={channel.external ? 'noopener noreferrer' : undefined}
+                className="group rounded-lg border border-line p-5 transition-colors duration-150 hover:border-accent hover:bg-accent-soft"
+              >
+                <p className="section-label">{channel.label}</p>
+                <p className="mt-3 break-words text-sm font-medium text-ink">{channel.value}</p>
+                <span aria-hidden="true" className="mt-5 block text-accent transition-transform duration-150 group-hover:translate-x-1">
+                  →
+                </span>
+              </a>
+            ))}
+          </div>
 
-                    <a
-                        href="https://www.linkedin.com/in/andresmaldonadoj/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group rounded-xl sm:rounded-2xl border border-white/8 bg-white/5 p-4 sm:p-5 transition hover:border-white/15 hover:bg-white/8"
-                    >
-                        <p className="text-xs uppercase tracking-[0.28em] text-slate-300/75">LinkedIn</p>
-                        <p className="mt-2 text-sm sm:text-base font-medium text-white group-hover:text-slate-100">Andres Maldonado</p>
-                    </a>
+          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="link-underline text-muted hover:text-ink">
+              LinkedIn
+            </a>
+            <a href={profile.github} target="_blank" rel="noopener noreferrer" className="link-underline text-muted hover:text-ink">
+              GitHub
+            </a>
+          </div>
 
-                    <a
-                        href="https://github.com/Andresmjj"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group rounded-xl sm:rounded-2xl border border-white/8 bg-white/5 p-4 sm:p-5 transition hover:border-white/15 hover:bg-white/8"
-                    >
-                        <p className="text-xs uppercase tracking-[0.28em] text-slate-300/75">GitHub</p>
-                        <p className="mt-2 text-sm sm:text-base font-medium text-white group-hover:text-slate-100">@Andresmjj</p>
-                    </a>
+          <div className="mt-12 border-t border-line pt-8">
+            <h3 className="text-sm font-semibold text-ink">Preguntas rápidas</h3>
+            <dl className="mt-5 grid gap-x-10 gap-y-5 sm:grid-cols-2">
+              {faqs.map((faq) => (
+                <div key={faq.question}>
+                  <dt className="text-sm font-medium text-ink">{faq.question}</dt>
+                  <dd className="mt-1 text-sm leading-6 text-muted">{faq.answer}</dd>
                 </div>
-            </article>
-        </section>
-    )
+              ))}
+            </dl>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  )
 }

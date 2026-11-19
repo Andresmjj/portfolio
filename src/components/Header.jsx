@@ -1,77 +1,195 @@
-import { useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react'
+import { profile, whatsappUrl } from '../data/profile'
+
+const links = [
+  { href: '#inicio', label: 'Inicio', id: 'inicio' },
+  { href: '#trayectoria', label: 'Trayectoria', id: 'trayectoria' },
+  { href: '#proyectos', label: 'Proyectos', id: 'proyectos' },
+  { href: '#formacion', label: 'Formación', id: 'formacion' },
+  { href: '#contacto', label: 'Contacto', id: 'contacto' },
+]
 
 export default function Header() {
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
+  const [active, setActive] = useState('inicio')
+  const menuRef = useRef(null)
+  const buttonRef = useRef(null)
 
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
+  const closeMenu = useCallback(() => setIsOpen(false), [])
 
-    };
-
-    const closeMenu = () => {
-        setIsOpen(false);
-    };
-
-    return (
-        <header className="fixed inset-x-0 top-4 z-50 px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto flex max-w-[min(90vw,72rem)] items-center justify-between rounded-full border border-white/10 bg-slate-950/55 px-3 py-3 sm:px-4 shadow-[0_20px_60px_rgba(0,0,0,0.25)] backdrop-blur-2xl">
-
-                {/* Logo */}
-                <a href="#inicio" onClick={closeMenu}>
-                    <img src="/Favicon-mj.svg" alt="Andres Maldonado logo" className="h-8 w-8 sm:h-10 sm:w-10 rounded-full object-cover bg-white flex-shrink-0" />
-                </a>
-
-                {/* Desktop Navigation */}
-                <nav className="hidden md:block ">
-                    <ul className="flex items-center gap-2">
-                        <li>
-                            <a className="rounded-full border border-white/10 bg-white/5 px-3 sm:px-4 py-2 text-xs sm:text-sm text-slate-100 transition hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10" href="#inicio">
-                                Inicio</a>
-                        </li>
-                        <li>
-                            <a className="rounded-full border border-white/10 bg-white/5 px-3 sm:px-4 py-2 text-xs sm:text-sm text-slate-100 transition hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10" href="#proyectos">
-                                Proyectos</a>
-                        </li>
-                        <li>
-                            <a className="rounded-full border border-white/10 bg-white/5 px-3 sm:px-4 py-2 text-xs sm:text-sm text-slate-100 transition hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10" href="#contacto">
-                                Contacto</a>
-                        </li>
-                    </ul>
-                </nav>
-
-                {/* Mobile Menu Button */}
-                <button
-                    onClick={toggleMenu}
-                    className="md:hidden p-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 transition"
-                    aria-label="Toggle menu"
-                >
-                    <svg className="w-5 h-5 text-slate-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
-                    </svg>
-                </button>
-            </div>
-
-            {/* Mobile Navigation Menu */}
-            {isOpen && (
-                <div className="md:hidden absolute top-20 left-4 right-4 sm:left-6 sm:right-6 rounded-2xl border border-white/10 bg-slate-950/95 shadow-[0_20px_60px_rgba(0,0,0,0.25)] backdrop-blur-2xl p-4">
-                    <nav>
-                        <ul className="flex flex-col gap-2">
-                            <li>
-                                <a className="block rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-100 transition hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10 text-center" href="#inicio" onClick={closeMenu}>
-                                    Inicio</a>
-                            </li>
-                            <li>
-                                <a className="block rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-100 transition hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10 text-center" href="#proyectos" onClick={closeMenu}>
-                                    Proyectos</a>
-                            </li>
-                            <li>
-                                <a className="block rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-100 transition hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10 text-center" href="#contacto" onClick={closeMenu}>
-                                    Contacto</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            )}
-        </header>
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActive(entry.target.id)
+        })
+      },
+      { rootMargin: '-45% 0px -50% 0px' },
     )
+
+    links.forEach(({ id }) => {
+      const section = document.getElementById(id)
+      if (section) observer.observe(section)
+    })
+
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!isOpen) return undefined
+
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        closeMenu()
+        buttonRef.current?.focus()
+        return
+      }
+
+      if (event.key !== 'Tab') return
+
+      const focusables = menuRef.current?.querySelectorAll('a, button')
+      if (!focusables?.length) return
+
+      const first = focusables[0]
+      const last = focusables[focusables.length - 1]
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault()
+        first.focus()
+      }
+    }
+
+    const onResize = () => {
+      if (window.innerWidth >= 768) closeMenu()
+    }
+
+    const onPointerDown = (event) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        !buttonRef.current?.contains(event.target)
+      ) {
+        closeMenu()
+      }
+    }
+
+    document.addEventListener('keydown', onKeyDown)
+    document.addEventListener('pointerdown', onPointerDown)
+    window.addEventListener('resize', onResize)
+    window.addEventListener('scroll', closeMenu, { passive: true })
+
+    return () => {
+      document.removeEventListener('keydown', onKeyDown)
+      document.removeEventListener('pointerdown', onPointerDown)
+      window.removeEventListener('resize', onResize)
+      window.removeEventListener('scroll', closeMenu)
+    }
+  }, [isOpen, closeMenu])
+
+  return (
+    <header className="sticky top-0 z-50 border-b border-line/80 bg-canvas/85 backdrop-blur-md">
+      <div className="page-shell flex h-16 items-center justify-between gap-4">
+        <a
+          href="#inicio"
+          onClick={closeMenu}
+          className="text-sm font-semibold tracking-[-0.01em] text-ink sm:text-base"
+        >
+          {profile.shortName}
+          <span className="hidden text-muted sm:inline"> · Full Stack</span>
+        </a>
+
+        <nav aria-label="Navegación principal" className="hidden md:block">
+          <ul className="flex items-center gap-7">
+            {links.map((link) => (
+              <li key={link.id}>
+                <a
+                  href={link.href}
+                  aria-current={active === link.id ? 'page' : undefined}
+                  className={`text-sm transition-colors duration-150 hover:text-ink ${
+                    active === link.id ? 'text-ink' : 'text-muted'
+                  }`}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="flex items-center gap-2">
+          <a
+            href={profile.cv}
+            download="Andres-Maldonado-CV.pdf"
+            className="hidden rounded-lg border border-ink px-4 py-2 text-sm font-medium text-ink transition-colors duration-150 hover:bg-accent-soft sm:inline-flex"
+          >
+            Descargar CV
+          </a>
+
+          <button
+            ref={buttonRef}
+            type="button"
+            onClick={() => setIsOpen((open) => !open)}
+            aria-expanded={isOpen}
+            aria-controls="menu-movil"
+            aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-line bg-surface text-ink md:hidden"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-5 w-5" aria-hidden="true">
+              {isOpen ? (
+                <path strokeLinecap="round" d="M6 6l12 12M18 6L6 18" />
+              ) : (
+                <path strokeLinecap="round" d="M4 7h16M4 12h16M4 17h16" />
+              )}
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      {isOpen && (
+        <div
+          ref={menuRef}
+          id="menu-movil"
+          className="absolute inset-x-0 top-full border-b border-line bg-surface px-5 pb-5 pt-2 shadow-lift md:hidden"
+        >
+          <nav aria-label="Navegación móvil">
+            <ul className="divide-y divide-line">
+              {links.map((link) => (
+                <li key={link.id}>
+                  <a
+                    href={link.href}
+                    onClick={closeMenu}
+                    className="block py-3 text-base text-ink"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className="mt-4 grid gap-2">
+            <a
+              href={profile.cv}
+              download="Andres-Maldonado-CV.pdf"
+              onClick={closeMenu}
+              className="rounded-lg bg-ink px-4 py-3 text-center text-sm font-medium text-white"
+            >
+              Descargar CV
+            </a>
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMenu}
+              className="rounded-lg border border-line px-4 py-3 text-center text-sm font-medium text-ink"
+            >
+              Escribir por WhatsApp
+            </a>
+          </div>
+        </div>
+      )}
+    </header>
+  )
 }
