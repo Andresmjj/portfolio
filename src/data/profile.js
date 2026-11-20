@@ -15,7 +15,7 @@ export const profile = {
   availability: 'Disponible para trabajo presencial, híbrido o remoto',
   headline: 'Desarrollador Full Stack con enfoque en backend.',
   intro:
-    'Desarrollador ',
+    'He colaborado en la contruccion y despliegue de aplicaciones web, E-commerce, Landing pages y soluciones con IA aplicada.',
   summary:
     'Desarrollador Full Stack con enfoque en backend y más de un año de experiencia construyendo y desplegando aplicaciones web en producción para el sector salud, con continuidad como contratista independiente desde julio de 2026. Cubro el ciclo completo del producto: APIs REST sobre una plataforma modular con NestJS, modelado de datos con PostgreSQL y Prisma, interfaces en React y despliegue en Linux con Docker y Nginx. Complemento el desarrollo con SEO técnico, rendimiento e integración de modelos de lenguaje para automatizar flujos de negocio.',
   whatsappMessage:
@@ -39,7 +39,6 @@ export const stats = [
   {
     value: '124',
     label: 'Endpoints REST en producción',
-    detail: 'Desarrollados en un entorno de producción con más de un año de experiencia.',
   },
   {
     value: '24',
@@ -79,7 +78,7 @@ export const journey = [
     id: 'queremekatar',
     period: 'Proyecto personal',
     type: 'Producto propio',
-    title: 'QuerermeKatar',
+    title: 'QuererMekatiar',
     subtitle: 'E-commerce con arquitectura de microservicios',
     description:
       'Diseñé la arquitectura distribuida y el modelo de datos de cada servicio. Implementé autenticación con JWT y Google Login (OAuth2) y las APIs que integran catálogo, usuarios y pedidos.',

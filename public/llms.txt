@@ -16,7 +16,7 @@
 
 - DoClio (marketplace de servicios de salud): empleado de planta de junio de 2025 a junio de 2026; contratista independiente desde julio de 2026.
 - Cifras: 124 endpoints REST, 16 dominios de negocio, 24 modelos en PostgreSQL con Prisma, 9 enums, 23 migraciones versionadas, 30 cambios de esquema, 70 páginas y 57 rutas en React, chat en tiempo real con Socket.io sobre Redis, 11 landings de servicio, despliegue en Linux con Docker Compose y Nginx con TLS.
-- QuerermeKatar: e-commerce personal con microservicios en Node.js/NestJS, React, PostgreSQL y MongoDB, autenticación JWT y Google Login (OAuth2).
+- QuerermeKatiar: e-commerce personal con microservicios en Node.js/NestJS, React, PostgreSQL y MongoDB, autenticación JWT y Google Login (OAuth2).
 - AI Inventory Assistant: API con Python/FastAPI y Google Gemini mediante Function Calling para operar inventario en lenguaje natural; PostgreSQL, SQLAlchemy, Alembic y Docker.
 
 ## Stack
