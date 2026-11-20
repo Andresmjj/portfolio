@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="border-t border-line py-10">
       <div className="page-shell flex flex-col gap-4 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
         <p>
-          {profile.shortName} · {profile.location} · {profile.role}, con acento en backend.
+          {profile.shortName} · {profile.location} · {profile.role}, con enfoque en backend.
         </p>
         <a href="#inicio" className="link-underline w-fit text-ink">
           Volver arriba ↑

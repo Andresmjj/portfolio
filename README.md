@@ -2,7 +2,7 @@
 
 Portafolio personal de una sola página. Diseño sobrio y editorial, animaciones de scroll
 discretas y carrusel nativo de proyectos. La misma historia que la hoja de vida: Full Stack
-con acento en backend, producto real en producción y datos íntegros y trazables.
+con focus en backend, producto real en producción y datos íntegros y trazables.
 
 **En vivo:** https://andresmaldonado.vercel.app/
 

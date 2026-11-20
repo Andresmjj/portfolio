@@ -1,35 +1,28 @@
-/**
- * Fuente única de verdad del portafolio.
- *
- * Toda la información procede de la hoja de vida "General · Full Stack (ES)"
- * y de las notas verificadas de Obsidian. Si cambias un dato aquí, cámbialo
- * también en index.html (metadatos y datos estructurados) y en el PDF.
- */
 
 export const profile = {
   name: 'Andrés Maldonado Jiménez',
   shortName: 'Andrés Maldonado',
   role: 'Desarrollador Full Stack',
-  focus: 'acento en backend',
+  focus: 'Backend y APIs REST',
   location: 'Medellín, Colombia',
   email: 'andresmaldonado1022@gmail.com',
-  phone: '+57 312 655 8732',
-  whatsappNumber: '573126558732',
+  phone: '@ANDRESMJJ',
+  whatsappUsuario: 'ANDRESMJJ',
   linkedin: 'https://www.linkedin.com/in/andresmaldonadoj/',
   github: 'https://github.com/Andresmjj',
   site: 'https://andresmaldonado.vercel.app/',
   cv: '/Andres-Maldonado-CV.pdf',
   availability: 'Disponible para trabajo presencial, híbrido o remoto',
-  headline: 'Desarrollador Full Stack con acento en backend.',
+  headline: 'Desarrollador Full Stack con enfoque en backend.',
   intro:
-    'Construyo producto real en producción: datos íntegros y trazables, de la API a la interfaz.',
+    'Desarrollador ',
   summary:
     'Desarrollador Full Stack con enfoque en backend y más de un año de experiencia construyendo y desplegando aplicaciones web en producción para el sector salud, con continuidad como contratista independiente desde julio de 2026. Cubro el ciclo completo del producto: APIs REST sobre una plataforma modular con NestJS, modelado de datos con PostgreSQL y Prisma, interfaces en React y despliegue en Linux con Docker y Nginx. Complemento el desarrollo con SEO técnico, rendimiento e integración de modelos de lenguaje para automatizar flujos de negocio.',
   whatsappMessage:
     'Hola Andrés, vi tu portafolio y me gustaría conversar sobre una oportunidad.',
 }
 
-export const whatsappUrl = `https://wa.me/${profile.whatsappNumber}?text=${encodeURIComponent(
+export const whatsappUrl = `https://wa.me/${profile.whatsappUsuario}?text=${encodeURIComponent(
   profile.whatsappMessage,
 )}`
 
@@ -41,12 +34,12 @@ export const stats = [
   {
     value: '1a 5m',
     label: 'En DoClio, desde junio de 2025',
-    detail: 'Empleado de planta y, desde julio de 2026, contratista independiente.',
+    detail: 'Empleado por contrato y, desde julio de 2026, contratista independiente.',
   },
   {
     value: '124',
     label: 'Endpoints REST en producción',
-    detail: 'Sobre 16 dominios de negocio del marketplace de salud.',
+    detail: 'Desarrollados en un entorno de producción con más de un año de experiencia.',
   },
   {
     value: '24',
@@ -176,7 +169,7 @@ export const faqs = [
   {
     question: '¿Quién es Andrés Maldonado Jiménez?',
     answer:
-      'Es un desarrollador Full Stack radicado en Medellín, con acento en backend. Desde junio de 2025 construye producto en DoClio y también desarrolla proyectos propios de e-commerce e IA aplicada.',
+      'Es un desarrollador Full Stack radicado en Medellín, con enfoque en backend. Desde junio de 2025 construye producto en DoClio y también desarrolla proyectos propios de e-commerce e IA aplicada.',
   },
   {
     question: '¿En qué trabaja y desde cuándo?',

@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="page-shell grid gap-12 lg:grid-cols-12 lg:items-end lg:gap-16">
         <div className="lg:col-span-7">
           <Reveal as="p" className="section-label">
-            Full Stack · acento en backend · Medellín
+            Full Stack · enfoque en backend · Medellín
           </Reveal>
 
           <Reveal as="h1" id="hero-titulo" delay={60} className="mt-5 text-4xl font-semibold leading-[1.08] tracking-[-0.035em] text-ink sm:text-5xl lg:text-[4.1rem]">
@@ -23,9 +23,8 @@ export default function Hero() {
           </Reveal>
 
           <Reveal as="p" delay={240} className="mt-4 max-w-2xl text-base leading-7 text-muted">
-            Desde junio de 2025 trabajo en DoClio como empleado de planta y, desde julio
-            de 2026, como contratista. Antes de llegar ahí construí mis propios productos
-            de e-commerce e IA aplicada.
+            Colaboro con DoClio desde junio de 2025 y, desde julio de 2026, como freelancer. En paralelo, creo e-commerce, 
+            landing pages y soluciones con IA enfocadas en arquitecturas limpias y automatización.
           </Reveal>
 
           <Reveal delay={300} className="mt-9 flex flex-wrap items-center gap-3">

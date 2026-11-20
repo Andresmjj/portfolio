@@ -1,6 +1,6 @@
 # Andrés Maldonado Jiménez
 
-> Desarrollador Full Stack con acento en backend, radicado en Medellín, Colombia. Construye producto en producción: datos íntegros y trazables, de la API a la interfaz.
+> Desarrollador Full Stack con enfoque en backend, radicado en Medellín, Colombia. Construye producto en producción: datos íntegros y trazables, de la API a la interfaz.
 
 - Web: https://andresmaldonado.vercel.app/
 - Hoja de vida (PDF, una página): https://andresmaldonado.vercel.app/Andres-Maldonado-CV.pdf
